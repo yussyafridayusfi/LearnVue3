@@ -1,5 +1,5 @@
 <template>
-<div id="app">
+<div id="booking-app">
   <h1>{{ appTitle }}</h1>
   <p>Guest: {{ booking.guestName }}</p>
   <p>Hotel: {{ booking.hotelName }}</p>
@@ -8,12 +8,8 @@
 </template>
 
 <script setup>
-import {ref, computed} from 'vue'
+import {ref, computed, reactive} from 'vue'
 const appTitle = ref("Hotel Booking")
-const guestName = ref("John Doe")
-const hotelName = ref("Grand Hotel")
-const roomPrice = ref(150)
-const nights = ref(3)
 
 const booking = reactive({
 guestName: "John",
@@ -23,7 +19,7 @@ nights: 3
 })
 
 const totalCost = computed(() => {
-  return roomPrice.value * nights.value
+  return booking.roomPrice * booking.nights
 })
 
 

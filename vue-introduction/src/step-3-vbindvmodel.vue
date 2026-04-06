@@ -4,7 +4,7 @@ Sometimes you need to put data into HTML attributes (not the text content). That
 -->
 
 <template>
-  <img :src="hotelImage" />
+  <img :src="hotelImage" alt="hotel exterior view" />
 
   <a :href="bookingLink"> Book now! </a>
 
